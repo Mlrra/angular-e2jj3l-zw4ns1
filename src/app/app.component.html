@@ -1,0 +1,56 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar [ngClass]="bg">
+      <ion-title
+        [ngClass]="classes"
+        [ngStyle]="iswithStyleBind ? styleA : styleB"
+      >
+        {{ title }}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-input
+        [(ngModel)]="title"
+        name="drac"
+        labelPlacement="stacked"
+        label="Change the value"
+        #myInput
+      ></ion-input>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-toggle (ionChange)="toggleBold()" [checked]="isBold"
+          >Bold</ion-toggle
+        >
+      </ion-item>
+      <ion-item>
+        <ion-toggle (ionChange)="toggleRed()" [checked]="isGreen"
+          >Green</ion-toggle
+        >
+      </ion-item>
+      <ion-item>
+        <ion-toggle
+          color="success"
+          (ionChange)="toggleStyleBinding()"
+          [checked]="iswithStyleBind"
+          >Toggle Style Binding
+        </ion-toggle>
+      </ion-item>
+      <ion-button
+        expand="block"
+        color="dark"
+        size="large"
+        (ion-Focus)="popup(myInput.name)"
+        id="present-alert"
+        >Send</ion-button
+      >
+      <ion-alert
+        trigger="present-alert"
+        header="Subcribe"
+        [message]="messages"
+      ></ion-alert>
+    </ion-list>
+  </ion-content>
+</ion-app>

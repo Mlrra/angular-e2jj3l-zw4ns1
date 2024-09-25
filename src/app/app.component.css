@@ -1,0 +1,15 @@
+.bold {
+  font-weight: 900;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.green {
+  color: var(--ion-color-success);
+}
+
+.withBackground {
+  --background: var (--ion-color-dark);
+}
